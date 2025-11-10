@@ -44,7 +44,7 @@ def reply_to_post(submission=None):
 
 
 def remove_from_json(sub_name, move_to_banned, json_location=SUBREDDIT_JSON):
-    with open(SUBREDDIT_JSON, "r+", encoding="utf-8") as file:
+    with open(json_location, "r+", encoding="utf-8") as file:
         file_dict = json.loads(file.read())
         file.seek(0)
         flair = file_dict["working_subreddits"].pop(sub_name)
